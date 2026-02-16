@@ -272,7 +272,7 @@ with col2:
             <div style='display:flex; align-items:center; justify-content:center;'>
                 <h1 style='color:{ttd_color}; margin:0'>{ttd_pred:.1f} months</h1>
             </div>
-            <p style='margin-bottom:0'>Timeline: {'Short' if ttd_pred < 12 else 'Long' if ttd_pred > 24 else 'Medium'}</p>
+            <p style='margin-bottom:0'>Timeline: {'Short' if ttd_pred < 1 else 'Long' if ttd_pred > 2 else 'Medium'}</p>
         </div>
         """, unsafe_allow_html=True)
         max_ttd = y_test["time_to_default"].quantile(0.95)
@@ -684,11 +684,11 @@ unsafe_allow_html=True)
 st.sidebar.markdown("---")
 st.sidebar.info("""
 **Available Model Formats:**
-1. ✅ `multitask_loan_model_tf/` (SavedModel - BEST)
-2. ✅ `multitask_loan_model.h5` (H5 format)
-3. ✅ `multitask_loan_model1.h5` (H5 format)
-4. ✅ `multitask_loan_model.keras` (Keras format)
-5. ✅ `multitask_loan_model1.keras` (Keras format)
+1.  `multitask_loan_model_tf/` (SavedModel - BEST)
+2.  `multitask_loan_model.h5` (H5 format)
+3.  `multitask_loan_model1.h5` (H5 format)
+4.  `multitask_loan_model.keras` (Keras format)
+5.  `multitask_loan_model1.keras` (Keras format)
 """)
 
 if st.sidebar.button("🔄 Refresh App"):
